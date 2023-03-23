@@ -17,8 +17,11 @@ int main(int argc, char* argv[]){
     Ordenamiento<int> arboles;
 
     std::clock_t init_time = std::clock( );
+    int n=0;
     while(!arch.eof())
     {
+        if(n%1000==0)
+            std::cout << n << endl;
         char *datos = new char[100];
 
         arch.getline(datos, 100);
@@ -52,13 +55,13 @@ int main(int argc, char* argv[]){
                 continue;
         }
 
-
+n++;
     }
     arch.close();
     std::clock_t end_time = std::clock( );
     double calc_time = (end_time - init_time)  / double (CLOCKS_PER_SEC);
     std::cout << "Tiempo de ejecucion AVL: " << calc_time << " seconds" << std::endl;
-    arboles.AVL.inOrden(arboles.AVL.getRaiz());
+    /*arboles.AVL.inOrden(arboles.AVL.getRaiz());*/
 
     system("pause");
     //Arbol RN
@@ -70,9 +73,12 @@ int main(int argc, char* argv[]){
     }
 
     std::clock_t init_time_RN = std::clock( );
+    n=0;
 
     while(!arch.eof())
     {
+        if(n%1000==0)
+        std::cout << n << endl;
         char *datos = new char[100];
 
         arch.getline(datos, 100);
@@ -100,18 +106,18 @@ int main(int argc, char* argv[]){
                 continue;
         }
 
-
+n++;
     }
     arch.close();
     std::clock_t end_time_RN = std::clock( );
-    double calc_time_RN = (end_time - init_time)  / double (CLOCKS_PER_SEC);
-    std::cout << "Tiempo de ejecucion RN: " << calc_time << " seconds" << std::endl;
+    double calc_time_RN = (end_time_RN - init_time_RN)  / double (CLOCKS_PER_SEC);
+    std::cout << "Tiempo de ejecucion RN: " << calc_time_RN << " seconds" << std::endl;
 
-    for (auto it = arboles.RN.begin(); it != arboles.RN.end() ; ++it) {
+   /* for (auto it = arboles.RN.begin(); it != arboles.RN.end() ; ++it) {
         std::cout << *it << " ";
         
     }
-
+*/
     system("pause");
 
 
