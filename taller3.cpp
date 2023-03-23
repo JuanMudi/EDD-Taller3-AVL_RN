@@ -1,6 +1,3 @@
-
-
-
 #include "Ordenamiento.h"
 #include <fstream>
 #include <cstring>
@@ -73,6 +70,7 @@ int main(int argc, char* argv[]){
     }
 
     std::clock_t init_time_RN = std::clock( );
+
     while(!arch.eof())
     {
         char *datos = new char[100];
