@@ -316,6 +316,18 @@ void ArbolBinarioAVL<T>::inOrden(NodoBinarioAVL<T> *inicio){
 }
 
 template <class T>
+void ArbolBinarioAVL<T>::inOrdenV(NodoBinarioAVL<T> *inicio, std::vector<T> &vec){
+    if(inicio->getHijoIzq()!=NULL){
+        inOrdenV(inicio->getHijoIzq(),vec);
+    }
+    vec.push_back(inicio->getDato());
+    if(inicio->getHijoDer()!=NULL){
+        inOrdenV(inicio->getHijoDer(), vec);
+    }
+    return;
+}
+
+template <class T>
 void ArbolBinarioAVL<T>::posOrden(NodoBinarioAVL<T> *inicio){
 	if(inicio->getHijoIzq()!=NULL){
 		posOrden(inicio->getHijoIzq());

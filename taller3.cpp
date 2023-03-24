@@ -3,9 +3,12 @@
 #include <cstring>
 #include <iomanip>
 #include <ctime>
+#include <algorithm>
+#include <vector>
 
 
 int main(int argc, char* argv[]){
+    std::vector<int> inOrden_RN, inOrden_AVL;
     //Arbol AVL
     //Declaracion del flujo de datos
     fstream arch;
@@ -20,8 +23,7 @@ int main(int argc, char* argv[]){
     int n=0;
     while(!arch.eof())
     {
-        if(n%1000==0)
-            std::cout << n << endl;
+
         char *datos = new char[100];
 
         arch.getline(datos, 100);
@@ -60,6 +62,7 @@ n++;
     arch.close();
     std::clock_t end_time = std::clock( );
     double calc_time = (end_time - init_time)  / double (CLOCKS_PER_SEC);
+    arboles.AVL.inOrdenV(arboles.AVL.getRaiz(), *&inOrden_AVL);
     std::cout << "Tiempo de ejecucion AVL: " << calc_time << " seconds" << std::endl;
     /*arboles.AVL.inOrden(arboles.AVL.getRaiz());*/
 
@@ -76,8 +79,6 @@ n++;
 
     while(!arch.eof())
     {
-        if(n%1000==0)
-        std::cout << n << endl;
         char *datos = new char[100];
 
         arch.getline(datos, 100);
@@ -112,11 +113,23 @@ n++;
     double calc_time_RN = (end_time_RN - init_time_RN)  / double (CLOCKS_PER_SEC);
     std::cout << "Tiempo de ejecucion RN: " << calc_time_RN << " seconds" << std::endl;
 
-   /* for (auto it = arboles.RN.begin(); it != arboles.RN.end() ; ++it) {
-        std::cout << *it << " ";
-        
+   for (auto it = arboles.RN.begin(); it != arboles.RN.end() ; ++it) {
+       inOrden_RN.push_back(*it);
     }
-*/
+
+    //std::cout << "Tamanio AVL: " << inOrden_AVL.size() << endl;
+    //std::cout << "Tamanio RN: " << inOrden_RN.size() << endl;
+   if(inOrden_AVL.size() == inOrden_RN.size()) {
+       for (int i = 0; i < inOrden_AVL.size(); i++) {
+           if(inOrden_AVL[i] != inOrden_RN[i]) {
+               std::cout << "La organización de los arboles no coinciden " << std::endl;
+               exit(0);
+           }
+       }
+       std::cout << "La organización de los arboles coinciden" << std::endl;
+   }
+
+
     system("pause");
 
 
