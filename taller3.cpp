@@ -63,7 +63,6 @@ n++;
     std::cout << "Tiempo de ejecucion AVL: " << calc_time << " seconds" << std::endl;
     /*arboles.AVL.inOrden(arboles.AVL.getRaiz());*/
 
-    system("pause");
     //Arbol RN
     //Declaracion del flujo de datos
     arch.open(argv[1], ios::in);
