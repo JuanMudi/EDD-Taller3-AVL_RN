@@ -27,11 +27,10 @@ int main(int argc, char* argv[]){
         char *datos = new char[100];
 
         arch.getline(datos, 100);
-        char op= datos[0];
         if(std::strcmp(datos,"")==0)
-        {
             continue;
-        }
+        char op= datos[0];
+
 
 
         char* token = std::strtok(datos, " ");
@@ -73,7 +72,6 @@ n++;
     {
         exit(-1);
     }
-
     std::clock_t init_time_RN = std::clock( );
     n=0;
 
@@ -82,11 +80,9 @@ n++;
         char *datos = new char[100];
 
         arch.getline(datos, 100);
-        char op= datos[0];
         if(std::strcmp(datos,"")==0)
-        {
             continue;
-        }
+        char op= datos[0];
 
 
 
