@@ -2,7 +2,7 @@
 
 
 int main(int argc, char* argv[]){
-    std::vector<int> inOrden_RN, inOrden_AVL;
+    std::list<int> inOrden_RN, inOrden_AVL;
     //Arbol AVL
     //Declaracion del flujo de datos
     fstream arch;
@@ -107,16 +107,29 @@ n++;
        inOrden_RN.push_back(*it);
     }
 
-    //std::cout << "Tamanio AVL: " << inOrden_AVL.size() << endl;
-    //std::cout << "Tamanio RN: " << inOrden_RN.size() << endl;
+    std::list<int>::iterator avl;
+    std::list<int>::iterator rn;
+
    if(inOrden_AVL.size() == inOrden_RN.size()) {
-       for (int i = 0; i < inOrden_AVL.size(); i++) {
-           if(inOrden_AVL[i] != inOrden_RN[i]) {
-               std::cout << "La organización de los arboles no coinciden " << std::endl;
-               exit(0);
+       avl = inOrden_AVL.begin();
+       rn = inOrden_RN.begin();
+
+       while(avl != inOrden_AVL.end() && rn != inOrden_RN.end())
+       {
+           if(*avl != *rn)
+           {
+               std::cout << "La organizacion de los arboles no coinciden " << std::endl;
+               exit(-1);
            }
+           ++avl;
+           ++rn;
+
+
        }
        std::cout << "La organizacion de los arboles coinciden" << std::endl;
+   }
+   else{
+       std::cout << "La organizacion de los arboles no coinciden" << std::endl;
    }
 
 

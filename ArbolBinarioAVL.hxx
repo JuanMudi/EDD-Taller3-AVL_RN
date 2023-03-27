@@ -1,5 +1,6 @@
 #include "ArbolBinarioAVL.h"
 #include <queue>
+#include <list>
 
 using namespace std;
 
@@ -316,13 +317,13 @@ void ArbolBinarioAVL<T>::inOrden(NodoBinarioAVL<T> *inicio){
 }
 
 template <class T>
-void ArbolBinarioAVL<T>::inOrdenV(NodoBinarioAVL<T> *inicio, std::vector<T> &vec){
+void ArbolBinarioAVL<T>::inOrdenV(NodoBinarioAVL<T> *inicio, std::list<T> &list){
     if(inicio->getHijoIzq()!=NULL){
-        inOrdenV(inicio->getHijoIzq(),vec);
+        inOrdenV(inicio->getHijoIzq(),list);
     }
-    vec.push_back(inicio->getDato());
+    list.push_back(inicio->getDato());
     if(inicio->getHijoDer()!=NULL){
-        inOrdenV(inicio->getHijoDer(), vec);
+        inOrdenV(inicio->getHijoDer(), list);
     }
     return;
 }

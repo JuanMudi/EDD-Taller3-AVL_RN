@@ -3,6 +3,7 @@
 
 #include "NodoBinarioAVL.h"
 #include <vector>
+#include <list>
 template <class T>
 
 class ArbolBinarioAVL{
@@ -26,7 +27,7 @@ class ArbolBinarioAVL{
 		bool buscar(T& val);
 		void preOrden(NodoBinarioAVL<T> *inicio);
 		void inOrden(NodoBinarioAVL<T> *inicio);
-        void inOrdenV(NodoBinarioAVL<T> *inicio, std::vector<T> &vec);
+        void inOrdenV(NodoBinarioAVL<T> *inicio, std::list<T> &list);
 		void posOrden(NodoBinarioAVL<T> *inicio);
 		void nivelOrden(NodoBinarioAVL<T> *inicio);
 };
