@@ -8,7 +8,6 @@ class NodoBinarioAVL{
 		T dato;
 		NodoBinarioAVL<T> *hijoIzq;
 		NodoBinarioAVL<T> *hijoDer;
-
 	public:
 		NodoBinarioAVL();
 		~NodoBinarioAVL();

@@ -9,6 +9,11 @@
 #include <iostream>
 #include <ctime>
 #include <math.h>
+#include <fstream>
+#include <cstring>
+#include <iomanip>
+#include <algorithm>
+#include <vector>
 #include <set>
 #include "ArbolBinarioAVL.h"
 
@@ -17,13 +22,6 @@ class Ordenamiento {
 public:
     std::set<T> RN;
     ArbolBinarioAVL<T> AVL = *new ArbolBinarioAVL<T>;
-
-
-
-
-
-
-
 };
 
 

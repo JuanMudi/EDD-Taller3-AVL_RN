@@ -1,10 +1,4 @@
 #include "Ordenamiento.h"
-#include <fstream>
-#include <cstring>
-#include <iomanip>
-#include <ctime>
-#include <algorithm>
-#include <vector>
 
 
 int main(int argc, char* argv[]){
@@ -122,11 +116,10 @@ n++;
                exit(0);
            }
        }
-       std::cout << "La organización de los arboles coinciden" << std::endl;
+       std::cout << "La organizacion de los arboles coinciden" << std::endl;
    }
 
 
-    system("pause");
 
 
 
