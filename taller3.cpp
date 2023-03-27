@@ -56,7 +56,8 @@ n++;
     std::clock_t end_time = std::clock( );
     double calc_time = (end_time - init_time)  / double (CLOCKS_PER_SEC);
     arboles.AVL.inOrdenV(arboles.AVL.getRaiz(), *&inOrden_AVL);
-    std::cout << "Tiempo de ejecucion AVL: " << calc_time << " seconds" << std::endl;
+    std::cout << "Tiempo de ejecucion AVL -> " << calc_time << " segundos" << std::endl;
+    std::cout << "-*************************************************-" << std::endl;
     /*arboles.AVL.inOrden(arboles.AVL.getRaiz());*/
 
     //Arbol RN
@@ -101,9 +102,10 @@ n++;
     arch.close();
     std::clock_t end_time_RN = std::clock( );
     double calc_time_RN = (end_time_RN - init_time_RN)  / double (CLOCKS_PER_SEC);
-    std::cout << "Tiempo de ejecucion RN: " << calc_time_RN << " seconds" << std::endl;
+    std::cout << "Tiempo de ejecucion RN -> " << calc_time_RN << " segundos" << std::endl;
+    std::cout << "-*************************************************-" << std::endl;
 
-   for (auto it = arboles.RN.begin(); it != arboles.RN.end() ; ++it) {
+   for (std::set<int>::iterator it = arboles.RN.begin(); it != arboles.RN.end() ; ++it) {
        inOrden_RN.push_back(*it);
     }
 
